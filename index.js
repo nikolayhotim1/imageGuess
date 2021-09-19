@@ -11,8 +11,13 @@ function init() {
 
 function showAnswer(eventObj) {
     let image = eventObj.target;
-    let name = image.id;
-
-    name = 'img/' + name + '.jpg';
+    let name = 'img/' + image.id + '.jpg';
     image.src = name;
+
+    setTimeout(hideAnswer, 3000);
+
+    function hideAnswer() {
+        name = 'img/' + image.id + 'blur.jpg';
+        image.src = name;
+    }
 }
